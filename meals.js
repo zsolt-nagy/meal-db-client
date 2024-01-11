@@ -19,9 +19,13 @@ function renderCategories(response) {
     let html = [];
     for (let meal of meals) {
         html.push(`
-            <div data-id="${meal.idMeal}" class="col-12 col-md-6 col-lg-4 col-xxl-3">
-                <img src="${meal.strMealThumb}" alt="${meal.strMeal}" data-id="${meal.idMeal}" class="w-100" />
-                <h4 data-id="${meal.idMeal}">${meal.strMeal}</h4>
+            <div data-id="${meal.idMeal}" class="meal-thumbnail-container col-12 col-md-6 col-lg-4 col-xxl-3">
+                <img 
+                    src="${meal.strMealThumb}" 
+                    alt="${meal.strMeal}" 
+                    data-id="${meal.idMeal}" 
+                    class="w-100 meal-thumbnail-image" />
+                <h4 data-id="${meal.idMeal}" class="meal-title">${meal.strMeal}</h4>
             </div>
         `);
     }

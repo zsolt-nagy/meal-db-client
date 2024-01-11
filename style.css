@@ -1,3 +1,37 @@
 main {
     min-height: calc(85vh - 4rem);
 }
+
+.meal-thumbnail-container {
+    padding: 2rem;
+    cursor: pointer;
+}
+
+.meal-thumbnail-container:hover {
+    transform: scale(1.1);
+    transition-duration: 200ms;
+}
+
+.meal-thumbnail-image {
+    border-radius: 50%;
+    border: 3px solid goldenrod;
+    box-shadow: 1px 1px 4px gold;
+}
+
+.meal-thumbnail-container:hover > .meal-thumbnail-image {
+    box-shadow: 0px 3px 6px white;
+    transition-duration: 200ms;
+}
+
+.meal-thumbnail-container:hover >.meal-title {
+    color: gold;
+    text-shadow: 1px 1px 2px goldenrod;
+    transition-duration: 200ms;
+}
+
+
+
+.meal-title {
+    text-align: center;
+    margin-top: 1rem;
+}
