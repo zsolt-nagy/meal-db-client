@@ -7,6 +7,10 @@ main {
     overflow: hidden;
 }
 
+.hidden {
+    display: none;
+}
+
 .meal-thumbnail-container {
     padding: 2rem;
     cursor: pointer;

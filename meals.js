@@ -1,4 +1,5 @@
 const CATEGORY_URL_PREFIX = "https://www.themealdb.com/api/json/v1/1/filter.php?c=";
+const RECIPE_URL_PREFIX = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=";
 
 function menuClicked(event) {
     event.preventDefault();
@@ -36,7 +37,39 @@ document.querySelector(".js-nav-menu").addEventListener("click", menuClicked);
 
 function recipeClicked(event) {
     event.preventDefault();
-    console.log(event.target.dataset.id);
+    fetchRecipe(event.target.dataset.id);
+}
+
+function fetchRecipe(id) {
+    fetch(RECIPE_URL_PREFIX + id)
+        .then((x) => x.json())
+        .then(renderRecipe);
+}
+
+function renderRecipe(response) {
+    document.querySelector(".js-selected-recipe-content").innerHTML = JSON.stringify(response);
+    document.querySelector(".js-selected-recipe-container").classList.remove("hidden");
+    document.querySelector(".js-search-results").classList.add("hidden");
 }
 
 document.querySelector(".js-search-results").addEventListener("click", recipeClicked);
+
+function hideRecipe(event) {
+    event.preventDefault();
+    document.querySelector(".js-selected-recipe-container").classList.add("hidden");
+    document.querySelector(".js-search-results").classList.remove("hidden");
+    document.querySelector(".js-selected-recipe-content").innerHTML = "";
+}
+
+document.querySelector(".js-hide-recipe").addEventListener("click", hideRecipe);
+
+function showRecipe(event) {
+    event.preventDefault();
+    // ... Homework (+1)
+    // Steps: get the item name
+    // Validate the name
+    // Fetch recipe by name
+    // Show recipe(s)
+}
+
+document.querySelector(".js-search-bar-button").addEventListener("click", showRecipe);

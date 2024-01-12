@@ -58,7 +58,9 @@
                         </ul>
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button class="btn btn-outline-success bg-gradient" type="submit">Search</button>
+                            <button class="js-search-bar-button btn btn-outline-success bg-gradient" type="submit">
+                                Search
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -67,6 +69,10 @@
         <main>
             <section class="container-fluid">
                 <div class="row js-search-results"></div>
+                <div class="row js-selected-recipe-container hidden">
+                    <div class="js-selected-recipe-content"></div>
+                    <button class="btn btn-success bg-gradient js-hide-recipe">Back</button>
+                </div>
             </section>
         </main>
         <footer class="page-footer">
