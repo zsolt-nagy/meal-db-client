@@ -1,5 +1,10 @@
+body {
+    min-width: 300px;
+}
+
 main {
     min-height: calc(85vh - 4rem);
+    overflow: hidden;
 }
 
 .meal-thumbnail-container {
@@ -29,9 +34,13 @@ main {
     transition-duration: 200ms;
 }
 
-
-
 .meal-title {
     text-align: center;
     margin-top: 1rem;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
